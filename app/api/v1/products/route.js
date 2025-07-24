@@ -11,6 +11,7 @@ export async function GET() {
 export async function POST(request) {
   await connectDB();
   const body = await request.json();
+  console.log("Received body:", body);
   const newProduct = await ProductModel.create(body);
   return NextResponse.json(newProduct, { status: 201 });
 }
