@@ -2,14 +2,18 @@
 import ProductItem from "./ProductItem";
 import { useEffect, useState } from "react";
 
-function ProductList() {
+function ProductList({ query }) {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("All");
 
-  const filteredProducts =
-    category === "All"
-      ? products
-      : products.filter((product) => product.category === category);
+  const filteredProducts = products
+    .filter((product) =>
+      category === "All" ? true : product.category === category
+    )
+    .filter((product) =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    )
+    .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
   useEffect(() => {
     const fetchProducts = async () => {

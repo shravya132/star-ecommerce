@@ -19,7 +19,7 @@ export default function Home() {
           className="w-5xl border rounded-3xl bg-gray-50 p-3"
         />
       </div>
-      <ProductList></ProductList>
+      <ProductList query={query} />
     </>
   );
 }
