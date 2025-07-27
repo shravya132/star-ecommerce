@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/collapsible";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
+import ProductView from "@/components/ProductView";
 
 export default function AdminPage() {
   const { user, isSignedIn } = useUser();
@@ -142,11 +143,11 @@ export default function AdminPage() {
                   onChange={handleChange}
                 >
                   <option value="">Select category</option>
-                  <option value="books">Books</option>
-                  <option value="electronics">Electronics</option>
-                  <option value="clothing">Clothing</option>
-                  <option value="toys">Toys</option>
-                  <option value="misc">Misc</option>
+                  <option value="Books">Books</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Clothing">Clothing</option>
+                  <option value="Toys">Toys</option>
+                  <option value="Misc">Misc</option>
                 </select>
                 <div className="flex justify-center">
                   <button
@@ -160,6 +161,9 @@ export default function AdminPage() {
             </CollapsibleContent>
           </Collapsible>
         </div>
+      </div>
+      <div>
+        <ProductView />
       </div>
       <ToastContainer
         position="top-center"

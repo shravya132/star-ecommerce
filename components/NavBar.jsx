@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { House, ShoppingBasket, ShoppingCart, Star } from "lucide-react";
+import { House, ShoppingBasket, UserRound, Star } from "lucide-react";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 function NavBar() {
@@ -16,8 +16,8 @@ function NavBar() {
 
       <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-4">
         <Button className="rounded-full h-10 w-10 p-0">
-          <Link href="/ProductsPage">
-            <ShoppingCart />
+          <Link href="/ProfilePage">
+            <UserRound />
           </Link>
         </Button>
         <Button className="rounded-full h-10 w-10 p-0">
